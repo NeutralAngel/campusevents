@@ -3,11 +3,23 @@
 one:
   name: MyString
   start_date: 2014-02-01
-  end_date: 2014-02-01
+  end_date: 2014-02-02
   url: MyString
 
 two:
   name: MyString
   start_date: 2014-02-01
-  end_date: 2014-02-01
+  end_date: 2014-02-02
   url: MyString
+
+single_date:
+  name: SingleDate
+  start_date: 2014-02-02
+  end_date: 2014-02-02
+  url: www.url.com
+
+backwards_dates:
+  name: BadDates
+  start_date: 2014-02-02
+  end_date: 2014-02-01
+  url: www.url.com

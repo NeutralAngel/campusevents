@@ -3,8 +3,8 @@ class Event < ActiveRecord::Base
   validate :dates_are_reasonable
 
   def dates_are_reasonable
-    if start_date > end_date
-      errors.add(:start_date, "can't be after End date")
+    if start_date >= end_date
+      errors.add(:start_date, "must be before End date")
     end
   end
 

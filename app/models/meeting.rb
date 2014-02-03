@@ -3,8 +3,8 @@ class Meeting < ActiveRecord::Base
   validate :dates_are_reasonable
 
   def dates_are_reasonable
-    if start > self.end
-      errors.add(:start, "can't be after end")
+    if start >= self.end
+      errors.add(:start, "must be before end")
     end
   end
    

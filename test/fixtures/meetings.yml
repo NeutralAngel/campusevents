@@ -4,10 +4,22 @@ one:
   name: MyString
   description: MyText
   start: 2014-02-01 12:50:09
-  end: 2014-02-01 12:50:09
+  end: 2014-02-01 12:50:10
 
 two:
   name: MyString
   description: MyText
   start: 2014-02-01 12:50:09
-  end: 2014-02-01 12:50:09
+  end: 2014-02-01 12:50:10
+
+same_times:
+  name: SameTimes
+  description: Bad dates fixtures
+  start: 2014-02-01 13:00:00
+  end: 2014-02-01 12:00:00
+
+backwards_times:
+  name: BackwardsTimes
+  description: Bad dates fixtures
+  start: 2014-02-01 13:00:00
+  end: 2014-02-01 12:00:00
