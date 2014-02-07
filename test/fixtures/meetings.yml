@@ -3,23 +3,23 @@
 one:
   name: MyString
   description: MyText
-  start: 2014-02-01 12:50:09
-  end: 2014-02-01 12:50:10
+  start_time: 2014-02-06 19:32:36
+  end_time: 2014-02-06 20:32:36
 
 two:
   name: MyString
   description: MyText
-  start: 2014-02-01 12:50:09
-  end: 2014-02-01 12:50:10
+  start_time: 2014-02-06 19:32:36
+  end_time: 2014-02-06 20:32:36
 
-same_times:
-  name: SameTimes
-  description: Bad dates fixtures
-  start: 2014-02-01 13:00:00
-  end: 2014-02-01 12:00:00
+single_time:
+  name: SingleTime
+  description: MyText
+  start_time: 2014-02-06 19:32:36
+  end_time: 2014-02-06 19:32:36
 
 backwards_times:
   name: BackwardsTimes
-  description: Bad dates fixtures
-  start: 2014-02-01 13:00:00
-  end: 2014-02-01 12:00:00
+  description: MyText
+  start_time: 2014-02-06 16:00:00
+  end_time: 2014-02-06 15:00:00

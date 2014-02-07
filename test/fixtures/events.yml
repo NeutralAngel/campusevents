@@ -19,7 +19,7 @@ single_date:
   url: www.url.com
 
 backwards_dates:
-  name: BadDates
+  name: BackwardsDates
   start_date: 2014-02-02
   end_date: 2014-02-01
   url: www.url.com

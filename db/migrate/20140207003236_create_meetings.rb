@@ -3,8 +3,8 @@ class CreateMeetings < ActiveRecord::Migration
     create_table :meetings do |t|
       t.string :name
       t.text :description
-      t.datetime :start
-      t.datetime :end
+      t.datetime :start_time
+      t.datetime :end_time
 
       t.timestamps
     end
