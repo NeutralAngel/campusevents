@@ -1,4 +1,6 @@
 Campusevents::Application.routes.draw do
+  resources :subscriptions
+
   resources :attendees
 
   resources :meetings
