@@ -4,6 +4,7 @@ class Event < ActiveRecord::Base
   has_many :meetings
   has_many :subscriptions
   has_many :attendees, through: :subscriptions
+  has_and_belongs_to_many :sponsors
 
   def dates_are_reasonable
     if start_date >= end_date
