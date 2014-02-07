@@ -1,7 +1,27 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+if Rails.env.development?
+
+  Attendee.delete_all
+  Subscription.delete_all
+  Event.delete_all
+  Sponsor.delete_all
+  Meeting.delete_all
+  Location.delete_all
+
+  ActiveRecord::Base.connection.execute("delete from sqlite_sequence where name='attendees';")
+  ActiveRecord::Base.connection.execute("delete from sqlite_sequence where name='subscriptions';")
+  ActiveRecord::Base.connection.execute("delete from sqlite_sequence where name='events';")
+  ActiveRecord::Base.connection.execute("delete from sqlite_sequence where name='sponsors';")
+  ActiveRecord::Base.connection.execute("delete from sqlite_sequence where name='meetings';")
+  ActiveRecord::Base.connection.execute("delete from sqlite_sequence where name='locations';")
+
+  Event.create( name: 'Event 1',
+                start_date: '2014-02-01',
+                end_date: '2014-02-02',
+                url: 'www.event1.com')
+
+  Event.create( name: 'Event 2',
+                start_date: '2014-02-01',
+                end_date: '2014-02-02',
+                url: 'www.event2.com')
+  
+end
