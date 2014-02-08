@@ -18,7 +18,8 @@ class SponsorsControllerTest < ActionController::TestCase
 
   test "should create sponsor" do
     assert_difference('Sponsor.count') do
-      post :create, sponsor: { logo: @sponsor.logo, name: @sponsor.name, url: @sponsor.url }
+      post :create, sponsor: { logo: @sponsor.logo, name: @sponsor.name, 
+                               url: @sponsor.url }
     end
 
     assert_redirected_to sponsor_path(assigns(:sponsor))
@@ -35,7 +36,8 @@ class SponsorsControllerTest < ActionController::TestCase
   end
 
   test "should update sponsor" do
-    patch :update, id: @sponsor, sponsor: { logo: @sponsor.logo, name: @sponsor.name, url: @sponsor.url }
+    patch :update, id: @sponsor, sponsor: { logo: @sponsor.logo, name: @sponsor.name, 
+                                            url: @sponsor.url }
     assert_redirected_to sponsor_path(assigns(:sponsor))
   end
 
