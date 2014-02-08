@@ -5,9 +5,6 @@ class Meeting < ActiveRecord::Base
   belongs_to :event
 
   def dates_are_reasonable
-    if start_time >= end_time
-      errors.add(:start_time, "must be before end time")
-    end
+    errors.add(:start_time, 'must be before end time') if start_time >= end_time
   end
-   
 end

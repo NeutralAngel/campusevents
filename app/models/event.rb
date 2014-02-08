@@ -7,8 +7,6 @@ class Event < ActiveRecord::Base
   has_and_belongs_to_many :sponsors
 
   def dates_are_reasonable
-    if start_date >= end_date
-      errors.add(:start_date, "must be before End date")
-    end
+    errors.add(:start_date, 'must be before End date') if start_date >= end_date
   end
 end
