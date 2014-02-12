@@ -14,37 +14,37 @@ if Rails.env.development?
   ActiveRecord::Base.connection.execute("delete from sqlite_sequence where name='meetings';")
   ActiveRecord::Base.connection.execute("delete from sqlite_sequence where name='locations';")
 
-  Event.create(name: 'Event1', start_date: '2014-02-01', end_date: '2014-02-02',
-               url: 'www.event1.com')
-  Event.create(name: 'Event2', start_date: '2014-02-01', end_date: '2014-02-02',
-               url: 'www.event2.com')
+  Event.create(name: 'End of the World', start_date: '2014-03-18', end_date: '2014-03-19',
+               url: 'www.vogons.com')
+  Event.create(name: 'Krikkit Attack on the Galaxy', start_date: '2014-02-01', end_date: '2014-02-02',
+               url: 'www.killeverybody.com')
   
-  Sponsor.create(name: 'Sponsor1', logo: 'logo', url: 'www.url.com', 
-                 events: [Event.find_by(name: 'Event2')] )
-  Sponsor.create(name: 'Sponsor2', logo: 'logo', url: 'www.url.com', 
-                 events: [Event.find_by(name: 'Event1')] )
-  Sponsor.create(name: 'Sponsor3', logo: 'logo', url: 'www.url.com', 
+  Sponsor.create(name: 'Prosser Enterprises', logo: 'logo', url: 'www.prosser.com', 
+                 events: [Event.find_by(name: 'End of the World')] )
+  Sponsor.create(name: 'Vogons', logo: 'logo', url: 'www.vogons.com', 
                  events: Event.all )
+  Sponsor.create(name: 'The Board of Judges', logo: 'logo', url: 'www.livr.gov', 
+                 events: [Event.find_by(name: 'Krikkit Attack on the Galaxy')] )
 
-  Location.create(name: 'Location1', description: 'description', latitude: 4.123456,
-                  longitude: 12.345678, map_url: 'www.thisbeit.com')
-  Location.create(name: 'Location2', description: 'description2', latitude: 4.123456,
-                  longitude: 12.345678, map_url: 'www.thisbeit2.com')
+  Location.create(name: 'Milliways', description: 'The Restaurant at the End of the Universe', 
+    latitude: -24.116949, longitude: 152.716224, map_url: 'https://www.google.com/maps/place/Lady+Elliot+Island+Reef/@-24.1125844,152.7145119,15z/data=!3m1!4b1!4m2!3m1!1s0x6be936941e90f547:0x4f77be8277d06262')
+  Location.create(name: "Arthur's House", description: "The House of Dent", latitude: 50.900292,
+                  longitude: -3.493533, map_url: 'https://www.google.com/maps/@50.900292,-3.493533,3a,75y,199.08h,90t/data=!3m4!1e1!3m2!1semrqxfyYbx9I8CrbzMCc3g!2e0')
 
-  Meeting.create(name: 'Meeting1', description: 'description1', 
+  Meeting.create(name: 'March of Progress', description: 'Building a Bypass', 
                  start_time: '2014-02-06 16:00:00', end_time: '2014-02-06 18:00:00',
-                 location: Location.find_by(name: 'Location1'),
-                 event: Event.find_by(name: 'Event1'))
-  Meeting.create(name: 'Meeting2', description: 'description2', 
+                 location: Location.find_by(name: "Arthur's House"),
+                 event: Event.find_by(name: 'End of the World'))
+  Meeting.create(name: 'End of Time', description: 'The End of History itself!', 
                  start_time: '2014-02-06 16:00:00', end_time: '2014-02-06 18:00:00',
-                 location: Location.find_by(name: 'Location2'),
-                 event: Event.find_by(name: 'Event2'))
+                 location: Location.find_by(name: 'Milliways'),
+                 event: Event.find_by(name: 'End of the World'))
 
-  Attendee.create(first_name: 'Nathan', last_name: 'Nontell', email: 'nnontell@iupui.edu',
+  Attendee.create(first_name: 'Arthur', last_name: 'Dent', email: 'adent@oldjanxspirit.com',
                   events: Event.all)
-  Attendee.create(first_name: 'Julianne', last_name: 'Nontell', email: 'test@test.com',
-                  events: [Event.find_by(name: 'Event2')])
-  Attendee.create(first_name: 'Tom', last_name: 'Bobadil', email: 'tbombadil@test.com')
+  Attendee.create(first_name: 'Ford', last_name: 'Prefect', email: 'fprefect@thgttg.org',
+                  events: [Event.find_by(name: 'Krikkit Attack on the Galaxy')])
+  Attendee.create(first_name: 'Zaphod', last_name: 'Beeblebrox', email: 'zbeeblebrox@imperialgalactic.gov')
 
   Subscription.create(attendee: Attendee.find_by(id: 3), event: Event.find_by(id: 1))
 end
