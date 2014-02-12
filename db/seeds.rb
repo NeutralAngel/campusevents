@@ -32,13 +32,21 @@ if Rails.env.development?
                   longitude: -3.493533, map_url: 'https://www.google.com/maps/@50.900292,-3.493533,3a,75y,199.08h,90t/data=!3m4!1e1!3m2!1semrqxfyYbx9I8CrbzMCc3g!2e0')
 
   Meeting.create(name: 'March of Progress', description: 'Building a Bypass', 
-                 start_time: '2014-02-06 16:00:00', end_time: '2014-02-06 18:00:00',
+                 start_time: '2014-03-18 16:00:00', end_time: '2014-03-18 18:00:00',
                  location: Location.find_by(name: "Arthur's House"),
                  event: Event.find_by(name: 'End of the World'))
   Meeting.create(name: 'End of Time', description: 'The End of History itself!', 
-                 start_time: '2014-02-06 16:00:00', end_time: '2014-02-06 18:00:00',
+                 start_time: '2014-03-18 14:00:00', end_time: '2014-03-18 15:00:00',
                  location: Location.find_by(name: 'Milliways'),
                  event: Event.find_by(name: 'End of the World'))
+  Meeting.create(name: 'Campaign For Real Time', description: 'Improbability Physics 101', 
+                 start_time: '2014-02-01 16:00:00', end_time: '2014-02-01 18:00:00',
+                 location: Location.find_by(name: "Arthur's House"),
+                 event: Event.find_by(name: 'Krikkit Attack on the Galaxy'))
+  Meeting.create(name: 'Intergalactic Election', description: 'Rigged, duh.', 
+                 start_time: '2014-02-02 16:00:00', end_time: '2014-02-02 18:00:00',
+                 location: Location.find_by(name: 'Milliways'),
+                 event: Event.find_by(name: 'Krikkit Attack on the Galaxy'))
 
   Attendee.create(first_name: 'Arthur', last_name: 'Dent', email: 'adent@oldjanxspirit.com',
                   events: Event.all)
