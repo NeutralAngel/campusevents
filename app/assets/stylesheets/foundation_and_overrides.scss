@@ -1193,4 +1193,16 @@
 
 // $include-html-visibility-classes: $include-html-classes;
 
+
+
+$topbar-link-font-size: rem-calc(18);
+$topbar-title-font-size: rem-calc(24);
+$body-font-family: "BentonSansCondensedRegular", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+$table-border-color: #7D110C;
+$table-even-row-bg: #E1D8B7;
+$table-head-bg: #C59217;
+$topbar-bg-color: #7D110C;
+$topbar-link-bg-hover: #E1D8B7;
+$row-width: rem-calc(1150);
+$column-gutter: rem-calc(30);
 @import 'foundation';
