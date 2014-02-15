@@ -1,0 +1,32 @@
+<nav class="top-bar" data-topbar>
+  <ul class="title-area">
+    <li class="name">
+      <h1><a href="/">My Site</a></h1>
+    </li>
+    <li class="toggle-topbar menu-icon">
+      <a href="#">Menu</a>
+    </li>
+  </ul>
+  <section class="top-bar-section">
+    <!-- Right Nav Section -->
+    <ul class="right">
+      <li class="has-dropdown not-click">
+        <a href="/">Menu</a>
+        <ul class="dropdown">
+          <li><%= link_to 'Events', events_path %></li>
+          <li><%= link_to 'Meetings', meetings_path %></li>
+          <li><%= link_to 'Sponsors', sponsors_path %></li>
+          <li><%= link_to 'Locations', locations_path %></li>
+          <li><%= link_to 'Attendees', attendees_path %></li>
+          <li><%= link_to 'Subscriptions', subscriptions_path %></li>
+        </ul>
+      </li>
+    </ul> 
+    <!-- Left Nav Section -->
+    <ul class="left">
+      <li>
+        
+      </li>
+    </ul>
+  </section>
+</nav>
