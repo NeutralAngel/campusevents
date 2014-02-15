@@ -1,8 +1,7 @@
 source 'https://rubygems.org'
 
-group :assets do
-  gem 'compass-rails'
-end
+gem 'compass-rails'
+
 
 gem 'foundation-rails'
 
