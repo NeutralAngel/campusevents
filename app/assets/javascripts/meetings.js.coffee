@@ -5,10 +5,11 @@
 $ ->
   init()
 
-$(document).on "page:load", ->
+$(document).on "page:change", ->
   init()
 
 init = ->
-  $('.datepicker').datepicker (
+  $('.datepicker').datepicker 
     dateFormat: 'mm-dd-yy'
-    showButtonPanel: true)
+    showButtonPanel: true
+  return true
