@@ -27,6 +27,14 @@
     <%= f.label :end_time %><br>
     <%= f.datetime_select :end_time %>
   </div>
+  <div class="field">
+    <%= f.label :event_id %><br />
+    <%= f.collection_select :event_id, Event.all, :id, :name %>
+  </div>
+  <div class="field">
+    <%= f.label :location_id %><br />
+    <%= f.collection_select :location_id, Location.all, :id, :name %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>

@@ -17,3 +17,4 @@
 @import "compass/layout/sticky-footer";
 @include sticky-footer(150px);
 thead {background: #C59217;}
+select { width: auto !important; }
