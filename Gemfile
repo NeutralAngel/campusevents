@@ -1,6 +1,10 @@
 source 'https://rubygems.org'
 
+gem 'pry', :group => :development
+
 gem 'compass-rails'
+
+gem 'jquery-ui-rails'
 
 
 gem 'foundation-rails'
