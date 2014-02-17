@@ -27,9 +27,9 @@ if Rails.env.development?
                  events: [Event.find_by(name: 'Krikkit Attack on the Galaxy')] )
 
   Location.create(name: 'Milliways', description: 'The Restaurant at the End of the Universe', 
-    latitude: -24.116949, longitude: 152.716224, map_url: 'https://www.google.com/maps/place/Lady+Elliot+Island+Reef/@-24.1125844,152.7145119,15z/data=!3m1!4b1!4m2!3m1!1s0x6be936941e90f547:0x4f77be8277d06262')
+    latitude: -24.116949, longitude: 152.716224, map_url: 'www.google.com/maps/place/Lady+Elliot+Island+Reef/@-24.1125844,152.7145119,15z/data=!3m1!4b1!4m2!3m1!1s0x6be936941e90f547:0x4f77be8277d06262')
   Location.create(name: "Arthur's House", description: "The House of Dent", latitude: 50.900292,
-                  longitude: -3.493533, map_url: 'https://www.google.com/maps/@50.900292,-3.493533,3a,75y,199.08h,90t/data=!3m4!1e1!3m2!1semrqxfyYbx9I8CrbzMCc3g!2e0')
+                  longitude: -3.493533, map_url: 'www.google.com/maps/@50.900292,-3.493533,3a,75y,199.08h,90t/data=!3m4!1e1!3m2!1semrqxfyYbx9I8CrbzMCc3g!2e0')
 
   Meeting.create(name: 'March of Progress', description: 'Building a Bypass', 
                  start_time: '2014-03-18 16:00:00', end_time: '2014-03-18 18:00:00',

@@ -1,4 +1,4 @@
-<h1>Listing locations</h1>
+<h1>Locations</h1>
 
 <table>
   <thead>
@@ -8,8 +8,6 @@
       <th>Latitude</th>
       <th>Longitude</th>
       <th>Map url</th>
-      <th></th>
-      <th></th>
       <th></th>
     </tr>
   </thead>
@@ -21,10 +19,10 @@
         <td><%= location.description %></td>
         <td><%= location.latitude %></td>
         <td><%= location.longitude %></td>
-        <td><%= link_to "map link", location.map_url %></td>
-        <td><%= link_to 'Show', location %></td>
-        <td><%= link_to 'Edit', edit_location_path(location) %></td>
-        <td><%= link_to 'Destroy', location, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to "map link", "http://#{location.map_url}", target: '_blank' %></td>
+        <td><%= link_to 'Show', location %><br>
+            <%= link_to 'Edit', edit_location_path(location) %><br>
+            <%= link_to 'Destroy', location, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -32,4 +30,4 @@
 
 <br>
 
-<%= link_to 'New Location', new_location_path %>
+<%= link_to 'New Location', new_location_path, class: 'button' %>

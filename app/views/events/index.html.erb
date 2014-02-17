@@ -1,4 +1,4 @@
-<h1>Listing events</h1>
+<h1>Events</h1>
 
 <table>
   <thead>
@@ -9,8 +9,6 @@
       <th>Url</th>
       <th>Sponsors</th>
       <th></th>
-      <th></th>
-      <th></th>
     </tr>
   </thead>
 
@@ -20,16 +18,16 @@
         <td><%= event.name %></td>
         <td><%= event.start_date %></td>
         <td><%= event.end_date %></td>
-        <td><%= event.url %></td>
+        <td><%= link_to event.url, "http://#{event.url}", target: '_blank' %></td>
         <td>
           <% event.sponsors.each_with_index do |sponsor, i| %>
             <%= tag :br unless i == 0 %>
             <%= sponsor.name %><br/>
           <% end %>
         </td>
-        <td><%= link_to 'Show', event %></td>
-        <td><%= link_to 'Edit', edit_event_path(event) %></td>
-        <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', event %><br>
+            <%= link_to 'Edit', edit_event_path(event) %><br>
+            <%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -37,4 +35,4 @@
 
 <br>
 
-<%= link_to 'New Event', new_event_path %>
+<%= link_to 'New Event', new_event_path, class: 'button' %>
