@@ -1,3 +1,5 @@
+
+
 <%= form_for(@meeting) do |f| %>
   <% if @meeting.errors.any? %>
     <div id="error_explanation">
@@ -11,33 +13,54 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+<div class="row">
+  <div class="small-8 columns">
+    <div class="field">
+      <%= f.label :name %><br>
+      <%= f.text_field :name %>
+    </div>
+    <div class="field">
+      <%= f.label :description %><br>
+      <%= f.text_area :description %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_area :description %>
-  </div>
-  <div class="field">
-    <%= f.label :start_time %><br>
-    <%= f.text_field :start_time, class: 'datepicker', :value => @meeting.start_time.nil? ? Time.now.strftime("%m-%d-%Y") : @meeting.start_time.strftime("%m-%d-%Y") %>
-    <%= f.time_select :start_time, ampm: true, minute_step: 15, default: round_to_15_minutes(Time.now) %>
-  </div>
-  <div class="field">
-    <%= f.label :end_time %><br>
-    <%= f.text_field :end_time, class: 'datepicker', :value => @meeting.end_time.nil? ? Time.now.strftime("%m-%d-%Y") : @meeting.end_time.strftime("%m-%d-%Y") %>
-    <%= f.time_select :end_time, ampm: true, minute_step: 15, default: round_to_15_minutes(Time.now) %>
-  </div>
-  <div class="field">
-    <%= f.label :event_id %><br />
-    <%= f.collection_select :event_id, Event.all, :id, :name %>
-  </div>
-  <div class="field">
-    <%= f.label :location_id %><br />
-    <%= f.collection_select :location_id, Location.all, :id, :name %>
+</div>
+
+  <div class="row">
+    <div class="small-5 columns">
+      <%= f.label :start_time %><br>
+        <div class="row">
+          <div class="small-4 columns">
+          <%= f.text_field :start_time, class: 'datepicker', :value => @meeting.start_time.nil? ? Time.now.strftime("%m-%d-%Y") : @meeting.start_time.strftime("%m-%d-%Y") %>
+          </div>
+          <div class="small-8 columns">
+            <%= f.time_select :start_time, ampm: true, minute_step: 15, default: round_to_15_minutes(Time.now) %>
+          </div>
+        </div>
+        <div class="field">
+          <%= f.label :event_id %><br />
+          <%= f.collection_select :event_id, Event.all, :id, :name, {include_blank: "Choose an Event"} %>
+        </div>
+    </div>
+    <div class="small-5 columns">
+      <%= f.label :end_time %><br>
+      <div class="row">
+        <div class="small-4 columns">
+        <%= f.text_field :end_time, class: 'datepicker', :value => @meeting.end_time.nil? ? Time.now.strftime("%m-%d-%Y") : @meeting.end_time.strftime("%m-%d-%Y") %>
+        </div>
+        <div class="small-8 columns">
+          <%= f.time_select :end_time, ampm: true, minute_step: 15, default: round_to_15_minutes(Time.now) %>
+        </div>
+      </div>
+      <div class="field">
+        <%= f.label :location_id %><br />
+        <%= f.collection_select :location_id, Location.all, :id, :name, {include_blank: "Select a Location"} %>
+      </div>
+    </div>
+    <div class="small-2 columns"></div>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit class: "button" %>
   </div>
 <% end %>
+

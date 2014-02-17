@@ -27,6 +27,14 @@
     <%= f.label :url %><br>
     <%= f.text_field :url %>
   </div>
+  <div class="field">
+    <% Sponsor.all.each do |sponsor| %>
+      <%= check_box_tag "event[sponsor_ids][]", sponsor.id, 
+        @event.sponsors.include?(sponsor) %>
+      <%= sponsor.name %>
+    <% end %>
+    <%= hidden_field_tag "event[sponsor_ids][]", nil %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>

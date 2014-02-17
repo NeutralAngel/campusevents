@@ -1,5 +1,5 @@
 class Meeting < ActiveRecord::Base
-  validates :name, :start_time, :end_time, presence: true
+  validates :name, :start_time, :end_time, :event_id, :location_id, presence: true
   validate :dates_are_reasonable
   belongs_to :location
   belongs_to :event
