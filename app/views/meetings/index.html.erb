@@ -18,8 +18,8 @@
       <tr>
         <td><%= meeting.name %></td>
         <td><%= meeting.description %></td>
-        <td><%= meeting.start_time %></td>
-        <td><%= meeting.end_time %></td>
+        <td><%= meeting.start_time.strftime('%m-%d-%Y %I:%M%p') %></td>
+        <td><%= meeting.end_time.strftime('%m-%d-%Y %I:%M%p') %></td>
         <td><%= meeting.event_name %></td>
         <td><%= meeting.location_name %></td>
         <td><%= link_to 'Show', meeting %><br>
