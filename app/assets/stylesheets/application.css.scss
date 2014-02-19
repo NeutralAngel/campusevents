@@ -38,3 +38,6 @@ select { width: auto !important; }
   overflow: hidden;
   text-overflow: ellipsis;
 }
+#main_window, #sidebar {
+  margin-top: 13px;
+}
