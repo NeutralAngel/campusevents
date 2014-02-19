@@ -1,9 +1,5 @@
+<h1><%= @event.name %></h1>
 <p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @event.name %>
-</p>
 
 <p>
   <strong>Start date:</strong>
@@ -20,8 +16,15 @@
   <%= @event.url %>
 </p>
 
-<%= link_to 'Edit', edit_event_path(@event) %> |
-<%= link_to 'Back', events_path %>
+<p>
+  <strong>Sponsors:</strong>
+  <%= @event.sponsors.map(&:name).join(", ") %>
+</p>
+
+<div class="navigation">
+  <%= link_to 'Edit', edit_event_path(@event) %> |
+  <%= link_to 'Back', events_path %>
+</div>
 
 
 <% content_for(:sidebar) do %>

@@ -15,20 +15,26 @@
  */
 
 @import "compass/layout/sticky-footer";
-@include sticky-footer(150px);
+@include sticky-footer(100px);
 thead {background: #C59217;}
 select { width: auto !important; }
 .actions { float: left; }
-table { margin-bottom: 70px !important;}
-// .link-section {
-//   float: left;
-//   height: 50%;
-//   margin-bottom: -27px;
-//   padding-left: 20px;
-// }
-// .link-section .links {
-//   clear:both;
-//   height: 54px;
-//   position: relative;
-// }
-
+#footer p {
+  font-size: 13px;
+  line-height: 18px;
+}
+.navigation {
+  font-size: 1.15em !important;
+  margin: 10px 0;
+}
+.edit-navigation {
+  @extend .navigation;
+  margin-left: 20px;
+  margin-top: 17px;
+  float: left;
+}
+.map-url{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

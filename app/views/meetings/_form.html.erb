@@ -30,10 +30,10 @@
     <div class="small-5 columns">
       <%= f.label :start_time %><br>
         <div class="row">
-          <div class="small-4 columns">
+          <div class="small-5 columns">
           <%= f.text_field :start_time, class: 'datepicker', :value => @meeting.start_time.nil? ? Time.now.strftime("%m-%d-%Y") : @meeting.start_time.strftime("%m-%d-%Y") %>
           </div>
-          <div class="small-8 columns">
+          <div class="small-7 columns">
             <%= f.time_select :start_time, ampm: true, minute_step: 15, default: round_to_15_minutes(Time.now) %>
           </div>
         </div>
@@ -45,10 +45,10 @@
     <div class="small-5 columns">
       <%= f.label :end_time %><br>
       <div class="row">
-        <div class="small-4 columns">
+        <div class="small-5 columns">
         <%= f.text_field :end_time, class: 'datepicker', :value => @meeting.end_time.nil? ? Time.now.strftime("%m-%d-%Y") : @meeting.end_time.strftime("%m-%d-%Y") %>
         </div>
-        <div class="small-8 columns">
+        <div class="small-7 columns">
           <%= f.time_select :end_time, ampm: true, minute_step: 15, default: round_to_15_minutes(Time.now) %>
         </div>
       </div>

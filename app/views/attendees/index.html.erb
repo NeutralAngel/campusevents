@@ -7,8 +7,6 @@
       <th>Last name</th>
       <th>Email</th>
       <th></th>
-      <th></th>
-      <th></th>
     </tr>
   </thead>
 
@@ -18,9 +16,9 @@
         <td><%= attendee.first_name %></td>
         <td><%= attendee.last_name %></td>
         <td><%= attendee.email %></td>
-        <td><%= link_to 'Show', attendee %></td>
-        <td><%= link_to 'Edit', edit_attendee_path(attendee) %></td>
-        <td><%= link_to 'Destroy', attendee, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', attendee %><br>
+          <%= link_to 'Edit', edit_attendee_path(attendee) %><br>
+          <%= link_to 'Destroy', attendee, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +26,5 @@
 
 <br>
 
-<%= link_to 'New Attendee', new_attendee_path %>
+<%= link_to 'New Attendee', new_attendee_path, class: 'button' %>
+

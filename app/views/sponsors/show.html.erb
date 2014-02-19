@@ -1,9 +1,5 @@
+<h1><%= @sponsor.name %></h1>
 <p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @sponsor.name %>
-</p>
 
 <p>
   <strong>Url:</strong>
@@ -15,5 +11,7 @@
   <%= @sponsor.logo %>
 </p>
 
-<%= link_to 'Edit', edit_sponsor_path(@sponsor) %> |
-<%= link_to 'Back', sponsors_path %>
+<div class="navigation">
+  <%= link_to 'Edit', edit_sponsor_path(@sponsor) %> |
+  <%= link_to 'Back', sponsors_path %>
+</div>

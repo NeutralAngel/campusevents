@@ -1,9 +1,5 @@
+<h1><%= @location.name %></h1>
 <p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @location.name %>
-</p>
 
 <p>
   <strong>Description:</strong>
@@ -20,10 +16,36 @@
   <%= @location.longitude %>
 </p>
 
-<p>
+<p class="map-url">
   <strong>Map url:</strong>
   <%= @location.map_url %>
 </p>
 
-<%= link_to 'Edit', edit_location_path(@location) %> |
-<%= link_to 'Back', locations_path %>
+<div class="navigation">
+  <%= link_to 'Edit', edit_location_path(@location) %> |
+  <%= link_to 'Back', locations_path %>
+</div>
+
+<% content_for(:sidebar) do %>
+  <% @sidebar_title = "Meetings" %>
+  <table class="large-sidebar">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Location</th>
+        <th>Start Time</th>
+        <th>End Time</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @location.upcoming_meetings.each do |meeting| %>
+        <tr>
+          <td><%= meeting.name %></td>
+          <td><%= meeting.location_name %></td>
+          <td><%= meeting.start_time.strftime('%m-%d-%Y %I:%M%p') %></td>
+          <td><%= meeting.end_time.strftime('%m-%d-%Y %I:%M%p') %></td>
+        </tr>
+        <% end %>
+    </tbody>
+  </table>
+<% end %>

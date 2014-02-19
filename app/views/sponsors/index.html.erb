@@ -7,8 +7,6 @@
       <th>Url</th>
       <th>Logo</th>
       <th></th>
-      <th></th>
-      <th></th>
     </tr>
   </thead>
 
@@ -18,9 +16,9 @@
         <td><%= sponsor.name %></td>
         <td><%= sponsor.url %></td>
         <td><%= sponsor.logo %></td>
-        <td><%= link_to 'Show', sponsor %></td>
-        <td><%= link_to 'Edit', edit_sponsor_path(sponsor) %></td>
-        <td><%= link_to 'Destroy', sponsor, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', sponsor %><br>
+          <%= link_to 'Edit', edit_sponsor_path(sponsor) %><br>
+          <%= link_to 'Destroy', sponsor, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +26,4 @@
 
 <br>
 
-<%= link_to 'New Sponsor', new_sponsor_path %>
+<%= link_to 'New Sponsor', new_sponsor_path, class: 'button' %>
