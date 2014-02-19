@@ -16,7 +16,7 @@ if Rails.env.development?
 
   Event.create(name: 'End of the World', start_date: '2014-03-18', end_date: '2014-03-19',
                url: 'www.vogons.com')
-  Event.create(name: 'Krikkit Attack on the Galaxy', start_date: '2014-02-01', end_date: '2014-02-02',
+  Event.create(name: 'Krikkit Attack on the Galaxy', start_date: '2014-05-01', end_date: '2014-05-02',
                url: 'www.killeverybody.com')
   
   Sponsor.create(name: 'Prosser Enterprises', logo: 'logo', url: 'www.prosser.com', 
@@ -40,11 +40,11 @@ if Rails.env.development?
                  location: Location.find_by(name: 'Milliways'),
                  event: Event.find_by(name: 'End of the World'))
   Meeting.create(name: 'Campaign For Real Time', description: 'Improbability Physics 101', 
-                 start_time: '2014-02-01 16:00:00', end_time: '2014-02-01 18:00:00',
+                 start_time: '2014-05-01 16:30:00', end_time: '2014-05-01 18:00:00',
                  location: Location.find_by(name: "Arthur's House"),
                  event: Event.find_by(name: 'Krikkit Attack on the Galaxy'))
   Meeting.create(name: 'Intergalactic Election', description: 'Rigged, duh.', 
-                 start_time: '2014-02-02 16:00:00', end_time: '2014-02-02 18:00:00',
+                 start_time: '2014-05-02 16:00:00', end_time: '2014-05-02 18:00:00',
                  location: Location.find_by(name: 'Milliways'),
                  event: Event.find_by(name: 'Krikkit Attack on the Galaxy'))
 
@@ -55,4 +55,12 @@ if Rails.env.development?
   Attendee.create(first_name: 'Zaphod', last_name: 'Beeblebrox', email: 'zbeeblebrox@imperialgalactic.gov')
 
   Subscription.create(attendee: Attendee.find_by(id: 3), event: Event.find_by(id: 1))
+
+  5.times do |i|
+    i += 1
+    Meeting.create(name: "Meeting_#{i}", description: "Description_#{i}", 
+      start_time: "2014-06-0#{i} 16:00:00", end_time: "2014-06-0#{i+1} 17:15:00", 
+      location: Location.find_by(name: 'Milliways'),
+      event: Event.find_by(name: 'Krikkit Attack on the Galaxy'))
+  end
 end
