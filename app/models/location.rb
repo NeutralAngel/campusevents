@@ -2,7 +2,7 @@ class Location < ActiveRecord::Base
   validates :name, presence: true
   has_many :meetings
 
-  def upcoming_meetings
+  def next_five_meetings
     future_meetings.sort{|a,b| a.start_time <=> b.start_time}.first(5)
   end
 

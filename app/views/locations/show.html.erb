@@ -38,7 +38,7 @@
       </tr>
     </thead>
     <tbody>
-      <% @location.upcoming_meetings.each do |meeting| %>
+      <% @location.next_five_meetings.each do |meeting| %>
         <tr>
           <td><%= meeting.name %></td>
           <td><%= meeting.location_name %></td>
