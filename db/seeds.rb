@@ -2,7 +2,7 @@ if Rails.env.development?
 
   Attendee.delete_all
   Subscription.delete_all
-  Event.delete_all
+  Event.destroy_all
   Sponsor.delete_all
   Meeting.delete_all
   Location.delete_all
@@ -13,6 +13,7 @@ if Rails.env.development?
   ActiveRecord::Base.connection.execute("delete from sqlite_sequence where name='sponsors';")
   ActiveRecord::Base.connection.execute("delete from sqlite_sequence where name='meetings';")
   ActiveRecord::Base.connection.execute("delete from sqlite_sequence where name='locations';")
+  ActiveRecord::Base.connection.execute("delete from sqlite_sequence where name='events_sponsors';")
 
   Event.create(name: 'End of the World', start_date: '2014-03-18', end_date: '2014-03-19',
                url: 'www.vogons.com')
@@ -32,9 +33,7 @@ if Rails.env.development?
                   longitude: -3.493533, map_url: 'www.google.com/maps/@50.900292,-3.493533,3a,75y,199.08h,90t/data=!3m4!1e1!3m2!1semrqxfyYbx9I8CrbzMCc3g!2e0')
 
   Meeting.create(name: 'March of Progress', description: 'Building a Bypass', 
-                 start_time: '2014-03-18 16:00:00', end_time: '2014-03-18 18:00:00',
-                 location: Location.find_by(name: "Arthur's House"),
-                 event: Event.find_by(name: 'End of the World'))
+                 start_time: '2014-03-18 16:00:00', end_time: '2014-03-18 18:00:00')
   Meeting.create(name: 'End of Time', description: 'The End of History itself!', 
                  start_time: '2014-03-18 14:00:00', end_time: '2014-03-18 15:00:00',
                  location: Location.find_by(name: 'Milliways'),
@@ -56,11 +55,14 @@ if Rails.env.development?
 
   Subscription.create(attendee: Attendee.find_by(id: 3), event: Event.find_by(id: 1))
 
-  5.times do |i|
-    i += 1
+  (1..5).each do |i|
     Meeting.create(name: "Meeting_#{i}", description: "Description_#{i}", 
-      start_time: "2014-06-0#{i} 16:00:00", end_time: "2014-06-0#{i+1} 17:15:00", 
-      location: Location.find_by(name: 'Milliways'),
-      event: Event.find_by(name: 'Krikkit Attack on the Galaxy'))
+                   start_time: "2014-06-0#{i} 16:00:00", end_time: "2014-06-0#{i+1} 17:15:00", 
+                   location: Location.find_by(name: 'Milliways'),
+                   event: Event.find_by(name: 'Krikkit Attack on the Galaxy'))
+  end
+
+  (1..4).each do |i|
+      Sponsor.create(name: "Sponsor_#{i}", logo: "logo_#{i}", url: "url_#{i}")
   end
 end

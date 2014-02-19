@@ -37,9 +37,11 @@
       <fieldset>
         <legend><%= f.label :sponsors %></legend>
           <% Sponsor.all.each_with_index do |sponsor, i| %>
-            <%= check_box_tag "event[sponsor_ids][]", sponsor.id, 
-              @event.sponsors.include?(sponsor) %>
-            <%= sponsor.name %>
+            <span class="sponsor">
+              <%= check_box_tag "event[sponsor_ids][]", sponsor.id, 
+                @event.sponsors.include?(sponsor) %>
+              <%= sponsor.name %>
+            </span>
             <%= tag :br if (i+1) % 3 == 0 %>
           <% end %>
         <%= hidden_field_tag "event[sponsor_ids][]", nil %>
