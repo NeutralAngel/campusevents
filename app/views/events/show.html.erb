@@ -1,3 +1,10 @@
+<% content_for(:sidebar) do %>
+  <h1>Meetings</h1>
+  <%= render partial: "shared/meetings_table", locals: {meetings: @event.meetings} %>
+  <h1>Sponsors</h1>
+  <%= render partial: "sponsors_list", locals: {sponsors: @event.sponsors} unless @event.sponsors.empty? %>
+<% end %>
+
 <h1><%= @event.name %></h1>
 <p id="notice"><%= notice %></p>
 
@@ -25,28 +32,3 @@
   <%= link_to 'Edit', edit_event_path(@event) %> |
   <%= link_to 'Back', events_path %>
 </div>
-
-
-<% content_for(:sidebar) do %>
-  <% @sidebar_title = "Meetings" %>
-  <table class="large-sidebar">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Location</th>
-        <th>Start Time</th>
-        <th>End Time</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @event.meetings.each do |meeting| %>
-        <tr>
-          <td><%= meeting.name %></td>
-          <td><%= meeting.location_name %></td>
-          <td><%= meeting.start_time.strftime('%m-%d-%Y %I:%M%p') %></td>
-          <td><%= meeting.end_time.strftime('%m-%d-%Y %I:%M%p') %></td>
-        </tr>
-        <% end %>
-    </tbody>
-  </table>
-<% end %>

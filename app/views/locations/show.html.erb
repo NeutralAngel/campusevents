@@ -1,3 +1,9 @@
+<% content_for(:sidebar) do %>
+  <h1>Upcoming Meetings</h1>
+  <%= render partial: "shared/meetings_table", 
+    locals: {meetings: @location.next_five_meetings} %>
+<% end %>
+
 <h1><%= @location.name %></h1>
 <p id="notice"><%= notice %></p>
 
@@ -25,27 +31,3 @@
   <%= link_to 'Edit', edit_location_path(@location) %> |
   <%= link_to 'Back', locations_path %>
 </div>
-
-<% content_for(:sidebar) do %>
-  <% @sidebar_title = "Meetings" %>
-  <table class="large-sidebar">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Location</th>
-        <th>Start Time</th>
-        <th>End Time</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @location.next_five_meetings.each do |meeting| %>
-        <tr>
-          <td><%= meeting.name %></td>
-          <td><%= meeting.location_name %></td>
-          <td><%= meeting.start_time.strftime('%m-%d-%Y %I:%M%p') %></td>
-          <td><%= meeting.end_time.strftime('%m-%d-%Y %I:%M%p') %></td>
-        </tr>
-        <% end %>
-    </tbody>
-  </table>
-<% end %>

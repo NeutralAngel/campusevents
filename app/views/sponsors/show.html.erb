@@ -1,3 +1,7 @@
+<% content_for(:sidebar) do %>
+  <h1>Sponsored Events</h1>
+  <%= render partial: 'shared/events_table', locals: {events: @sponsor.events} %>
+<% end %>
 <h1><%= @sponsor.name %></h1>
 <p id="notice"><%= notice %></p>
 

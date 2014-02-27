@@ -1,3 +1,8 @@
+<% content_for(:sidebar) do %>
+  <h1>Location</h1>
+  <%= link_to @meeting.location.name, @meeting.location %>
+<% end %>
+
 <h1><%= @meeting.name %></h1>
 <p id="notice"><%= notice %></p>
 
